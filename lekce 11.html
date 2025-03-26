@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lekce 11</title>
+</head>
+
+<body>
+    <!-- <button onclick="alert('smrdí ti prdel')">neclickej</button>
+    <button id="tlacitko">počet stisknutí: 0</button> -->
+    <div>
+
+
+
+        <input id="prvni">
+        <select id="operator">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="krat">*</option>
+            <option value="deleno">/</option>
+        </select>
+        <input id="druhy" type="number">
+
+        <button id="spocitej">spočítej</button>
+
+        <p id="vysledek"></p>
+    </div>
+    <script>
+        let pocet = 0
+
+        let tlacitko = document.getElementById("tlacitko")
+
+        tlacitko.addEventListener("click", function () {
+            pocet++
+            tlacitko.innerText = "počet stisknutí: "
+                + pocet
+        })
+
+        let prvnicisloEment = document.getElementById("prvni")
+        let druhycisloElement = document.getElementById("druhy")
+        let operator = document.getElementById("operator")
+        let spocitejtlacitko = document.getElementById("spocitej")
+        let vysledek = document.getElementById("vysledek")
+
+        spocitejtlacitko.addEventListener("click", function () {
+
+            let prvnicislo = new Number(prvnicisloEment.value)
+            let druhecislo = new Number(druhycisloElement.value)
+
+            if (operator.value === "plus") {
+                vysledek.innerText = prvnicislo + druhecislo
+            } if (operator.value === "minus") { }
+            if (operator.value === "krat") { }
+            if (operator.value === "deleno") { }
+        })
+    </script>
+</body>
+
+</html>
